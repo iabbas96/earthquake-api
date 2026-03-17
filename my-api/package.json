@@ -3,9 +3,13 @@
   "version": "1.0.0",
   "description": "Earthquake REST API with Auth, Redis, Swagger",
   "main": "src/app.js",
+    "engines": {
+    "node": "18.x"
+  },
   "scripts": {
     "start": "node src/app.js",
     "dev": "nodemon src/app.js"
+    
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
