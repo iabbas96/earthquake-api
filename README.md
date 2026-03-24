@@ -1,5 +1,6 @@
 NOTE:
 
+->LIVE-URl: http://earthquake-api-env.eba-mfmdpvr8.eu-north-1.elasticbeanstalk.com/
 🚀 Server running on port 3000
 📚 Swagger docs at http://localhost:3000/api-docs
 -->The Postman collection: https://grey-shadow-25882.postman.co/workspace/My-Workspace~00fd07f9-09e2-4387-8bfe-9d287902266e/collection/23976594-cbb6af9a-bfee-4c70-bbd7-bce4cbdb85f4?action=share&creator=23976594
