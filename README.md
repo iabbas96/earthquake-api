@@ -1,4 +1,7 @@
 NOTE:
+Live Application: http://earthquake-api-env.eba-mfmdpvr8.eu-north-1.elasticbeanstalk.com/
+
+API Documentation: elasticbeanstalk.com
 
 ->LIVE-URl: http://earthquake-api-env.eba-mfmdpvr8.eu-north-1.elasticbeanstalk.com/
 🚀 Server running on port 3000
@@ -128,3 +131,7 @@ railway up
 ## 📦 Data Source
 
 Data is seeded from the [USGS Earthquake Hazards Program](https://earthquake.usgs.gov/fdsnws/event/1/) — 1000+ real earthquake records.
+
+Live Application: http://earthquake-api-env.eba-mfmdpvr8.eu-north-1.elasticbeanstalk.com/
+
+API Documentation: elasticbeanstalk.com
