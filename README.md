@@ -1,6 +1,8 @@
 NOTE:
 Live Application: http://earthquake-api-env1.eba-mfmdpvr8.eu-north-1.elasticbeanstalk.com/api/earthquakes
 
+postman documentation: https://grey-shadow-25882.postman.co/workspace/My-Workspace~00fd07f9-09e2-4387-8bfe-9d287902266e/collection/23976594-30d16e84-27aa-4197-9b43-b03a33a3b792?action=share&source=copy-link&creator=23976594
+
 ## Setup and Installation
 
 # 1. Environment Variables
