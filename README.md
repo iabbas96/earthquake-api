@@ -1,7 +1,13 @@
+Below is the My-API README:
+
 NOTE:
 Live Application: http://earthquake-api-env1.eba-mfmdpvr8.eu-north-1.elasticbeanstalk.com/api/earthquakes
 
-postman documentation: https://grey-shadow-25882.postman.co/workspace/My-Workspace~00fd07f9-09e2-4387-8bfe-9d287902266e/collection/23976594-30d16e84-27aa-4197-9b43-b03a33a3b792?action=share&source=copy-link&creator=23976594
+POSTMAN DOCUMENTATION: https://documenter.getpostman.com/view/23976594/2sBXikoWrB
+
+postman collection: https://grey-shadow-25882.postman.co/workspace/My-Workspace~00fd07f9-09e2-4387-8bfe-9d287902266e/collection/23976594-30d16e84-27aa-4197-9b43-b03a33a3b792?action=share&source=copy-link&creator=23976594
+
+"Note: The API is hosted on AWS Elastic Beanstalk using the default environment URL. For the purpose of this project and to remain within the AWS Free Tier, it is served over HTTP. In a production environment, a custom domain with an SSL/TLS certificate would be used to secure authentication tokens."
 
 ## Setup and Installation
 
@@ -31,7 +37,7 @@ API Documentation: elasticbeanstalk.com
 ->Redis Connected
 -> MongoDB Connected: localhost
 
-# 🌍 Earthquake API
+# Earthquake API
 
 A RESTful API for earthquake data with JWT authentication, Redis caching, pagination, and Swagger documentation.
 
@@ -42,7 +48,7 @@ A RESTful API for earthquake data with JWT authentication, Redis caching, pagina
 - **Auth:** JWT + Passport.js
 - **Cache:** Redis (ioredis)
 - **Docs:** Swagger UI
-- **Hosting:** Railway / Render
+- **Hosting:** AWS (beanstalk)
 
 ---
 
@@ -122,34 +128,7 @@ POST /api/earthquakes/seed   (Bearer token required)
 | `place`   | string  | Filter by place name     |
 | `tsunami` | boolean | Filter tsunami events    |
 
----
-
-## 📖 Documentation
-
-- **Swagger UI:** `http://localhost:3000/api-docs`
-- **Postman Collection:** [Add your Postman link here]
-- **Live API:** [Add your cloud URL here]
-
----
-
-## ☁️ Deployment (Railway)
-
-```bash
-# Install Railway CLI
-npm install -g @railway/cli
-
-# Login and deploy
-railway login
-railway init
-railway up
-
-# Add environment variables in Railway dashboard
-# Add MongoDB and Redis plugins in Railway
-```
-
----
-
-## 📦 Data Source
+## Data Source
 
 Data is seeded from the [USGS Earthquake Hazards Program](https://earthquake.usgs.gov/fdsnws/event/1/) — 1000+ real earthquake records.
 
