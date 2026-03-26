@@ -21,7 +21,7 @@ if (process.env.REDIS_URL) {
   });
 }
 
-redisClient.on('connect', () => console.log('✅ Redis Connected'));
-redisClient.on('error', (err) => console.error('❌ Redis Error:', err.message));
+redisClient.on('connect', () => console.log('The Redis  is Connected successfully...'));
+redisClient.on('error', (err) => console.error('oops, an error has occured while trying to connect...:', err.message));
 
 module.exports = redisClient;

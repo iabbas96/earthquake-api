@@ -7,7 +7,7 @@ const generateToken = (userId) => {
   });
 };
 
-// @POST /api/auth/register
+//Creating the POST for registering: API:  /api/auth/register
 const register = async (req, res) => {
   try {
     const { username, email, password } = req.body;
@@ -30,7 +30,7 @@ const register = async (req, res) => {
   }
 };
 
-// @POST /api/auth/login
+//Creating the POST API for login:  /api/auth/login
 const login = async (req, res) => {
   try {
     const { email, password } = req.body;
@@ -52,7 +52,7 @@ const login = async (req, res) => {
   }
 };
 
-// @GET /api/auth/me
+//Creating the GET API for getting the logged in user: /api/auth/me
 const getMe = async (req, res) => {
   res.json({ user: req.user });
 };

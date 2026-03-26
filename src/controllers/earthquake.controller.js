@@ -1,14 +1,14 @@
 const Earthquake = require('../models/earthquake.model');
 const { clearCache } = require('../middleware/cache.middleware');
 
-// @GET /api/earthquakes — PUBLIC with pagination
+//Creating the GET API  /api/earthquakes with pagination
 const getAll = async (req, res) => {
   try {
     const page = Math.max(1, parseInt(req.query.page) || 1);
-    const limit = Math.min(20, parseInt(req.query.limit) || 20); // max 20 per page
+    const limit = Math.min(20, parseInt(req.query.limit) || 20);
     const skip = (page - 1) * limit;
 
-    // Filters
+    // Creating a Filter
     const filter = {};
     if (req.query.minMag) filter.magnitude = { $gte: parseFloat(req.query.minMag) };
     if (req.query.maxMag) filter.magnitude = { ...filter.magnitude, $lte: parseFloat(req.query.maxMag) };
@@ -36,18 +36,18 @@ const getAll = async (req, res) => {
   }
 };
 
-// @GET /api/earthquakes/:id — PUBLIC
+//Creating the GET API:  /api/earthquakes/:id 
 const getOne = async (req, res) => {
   try {
     const earthquake = await Earthquake.findById(req.params.id);
-    if (!earthquake) return res.status(404).json({ error: 'Earthquake not found' });
+    if (!earthquake) return res.status(404).json({ error: 'The Earthquake is not found' });
     res.json({ data: earthquake });
   } catch (err) {
     res.status(500).json({ error: err.message });
   }
 };
 
-// @POST /api/earthquakes — PROTECTED (admin)
+//Creating the POST API for the protected admin:  /api/earthquakes 
 const create = async (req, res) => {
   try {
     const earthquake = await Earthquake.create(req.body);
@@ -58,7 +58,7 @@ const create = async (req, res) => {
   }
 };
 
-// @PUT /api/earthquakes/:id — PROTECTED (admin)
+//Creating the PUT API for updating: /api/earthquakes/:id 
 const update = async (req, res) => {
   try {
     const earthquake = await Earthquake.findByIdAndUpdate(
@@ -66,7 +66,7 @@ const update = async (req, res) => {
       req.body,
       { new: true, runValidators: true }
     );
-    if (!earthquake) return res.status(404).json({ error: 'Earthquake not found' });
+    if (!earthquake) return res.status(404).json({ error: 'The Earthquake is not found' });
     await clearCache('earthquakes');
     res.json({ message: 'Earthquake updated', data: earthquake });
   } catch (err) {
@@ -74,7 +74,7 @@ const update = async (req, res) => {
   }
 };
 
-// @DELETE /api/earthquakes/:id — PROTECTED (admin)
+//Creating the DELETE API that enables the admin to delete: /api/earthquakes/:id 
 const destroy = async (req, res) => {
   try {
     const earthquake = await Earthquake.findByIdAndDelete(req.params.id);
@@ -86,7 +86,7 @@ const destroy = async (req, res) => {
   }
 };
 
-// @POST /api/earthquakes/seed — PROTECTED (admin) — seed from USGS
+//Creating the POST API by an admin for seeding the earthquake data from the USGS:  /api/earthquakes/seed 
 const seedFromUSGS = async (req, res) => {
   try {
     const axios = require('axios');
@@ -114,7 +114,7 @@ const seedFromUSGS = async (req, res) => {
     await Earthquake.insertMany(earthquakes);
     await clearCache('earthquakes');
 
-    res.json({ message: `✅ Seeded ${earthquakes.length} earthquakes from USGS` });
+    res.json({ message: `Seeded ${earthquakes.length} earthquakes from USGS` });
   } catch (err) {
     res.status(500).json({ error: err.message });
   }
